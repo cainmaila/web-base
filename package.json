@@ -1,6 +1,6 @@
 {
     "name": "web-base",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "app/app.js",
     "repository": {
         "url": "https://github.com/cainmaila/web-base.git",

@@ -4,9 +4,12 @@ const compression = require('compression');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const cors = require('cors');
+const https = require('https');
 const config = require('../config.json');
+const sslOptions = require('./sslLicense.js');
 const port = process.env.PORT || config.port || 80;
 const app = express();
+const server = https.createServer(sslOptions.options, app);
 
 app.use(methodOverride());
 app.use(compression());
@@ -21,7 +24,7 @@ app.use(logErrors);
 app.use(clientErrorHandler);
 app.use(errorHandler);
 app.use(status404);
-app.listen(port, function() {
+server.listen(port, function() {
     console.log('runing Web Server in ' + port + ' port...');
 });
 

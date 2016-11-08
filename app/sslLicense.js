@@ -2,8 +2,8 @@ var fs = require('fs');
 
 //ssl license
 
-var keyPath = '../../private.key';
-var certPath = '../../certificate.pem';
+var keyPath = '../private.key';
+var certPath = '../certificate.pem';
 
 var hskey = fs.readFileSync(keyPath);
 var hscert = fs.readFileSync(certPath);
